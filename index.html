@@ -1,0 +1,110 @@
+<!--
+
+link : https://hunji.xyz
+name : 迷恋自留地
+mail : hello@wujiayi.vip
+微信公众号： 混迹先森的信箱
+小程序：迷恋自留地
+
+-->
+
+<html>
+	<head>
+     
+                <meta charset="UTF-8">
+<title>迷恋的旅行足迹</title>
+      <meta name="description" content="人生就是一场旅途，足迹不可能踏遍整个世界，但走过的每一个地方都值得记录！">
+      <meta name="keywords" content="迷恋自留地,旅行地图">
+     
+		<!--引入jQuery框架-->
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<!--引入jVectorMap库-->
+		<script type="text/javascript" src="js/jquery-jvectormap-1.2.2.min.js"></script>
+		<!--引入样式表-->
+		<link href="js/jquery-jvectormap-1.2.2.css" rel="stylesheet" media="screen">
+       <link rel="shortcut icon" href="favicon.ico">
+
+		<!--引入中国地图数据库-->
+		<script type="text/javascript" src="js/jquery-jvectormap-cn-merc-en.js"></script>
+
+		<!--引入美国地图数据库-->
+		<!--script type="text/javascript" src="js/jquery-jvectormap-us-aea.js"></script-->
+		<!--引入世界地图数据库-->
+		<!--script type="text/javascript" src="js/jquery-jvectormap-world-mill.js"></script-->
+
+	</head>
+<body>
+	<!--background-color: 地图背景颜色-->
+	<div id="map" style="background-color:#353535"> </div>
+	<script>
+		$('#map').vectorMap({
+
+			// 此处更改地图
+			map: 'cn_merc_en',   // 中国地图
+			//map: 'us_aea',     // 美国地图
+			//map: 'world_mill', // 世界地图
+
+
+			backgroundColor: 'transparent',
+			zoomMin: 0.9, // 鼠标缩放时的最小比例
+			zoomMax: 2.4, // 鼠标缩放时的最大比例
+			focusOn: {
+				x: 0.55,
+				y: 2,
+				scale: 0.9
+			},
+			regionStyle: {
+				initial: {
+					fill: '#e5e5e5',   // 地图颜色
+					"fill-opacity": 1, // 省份（州）是否隐藏，鼠标滑动时显示; 1：显示，2：隐藏。
+					stroke: 'none',
+					"stroke-width": 0,
+					"stroke-opacity": 1
+				},
+				hover: {
+					fill: '#ccc',  // 鼠标滑动至某省份的高亮颜色。
+					"fill-opacity": 0.8
+				},
+				selected: {
+					fill: 'yellow'
+				},
+				selectedHover: {}
+			},
+			markerStyle: {
+		        initial: {
+		            fill: '#fd8888', // 足迹位置的填充颜色
+		            stroke: '#fff'   // 足迹位置的描边颜色
+		        },
+				hover: {
+					fill: '#fd2020', // 鼠标滑动至足迹位置后的填充颜色
+					stroke: '#fff',  // 鼠标滑动至足迹位置后的描边颜色
+					"fill-opacity": 0.8
+				},
+		    },
+			markers: [ // 足迹位置
+
+				// {latLng: [经度（保留两位小数）, 纬度（保留两位小数）], name: '城市名称'},
+				// 推荐查询经纬度网站：http://www.gpsspg.com/maps.htm
+
+	{latLng: [38.99, 117.59], name: '天津-刘庄子'},
+               {latLng: [39.15, 117.73], name: '天津-方特'},
+              {latLng: [31.24, 121.49], name: '上海-外滩'},
+            {latLng: [32.99, 112.52], name: '河南南阳'},
+ {latLng: [32.68, 112.08], name: '河南邓州'},
+ {latLng: [34.76, 113.92], name: '河南郑州方特'},
+        {latLng: [31.19, 121.43], name: '上海-交通大学'},
+        {latLng: [31.29, 121.50], name: '上海-复旦大学'},
+         {latLng: [31.28, 121.50], name: '上海-同济大学'},
+        {latLng: [31.57, 120.24], name: '无锡-惠山古镇'},
+        {latLng: [33.75, 113.19], name: '平顶山-白龟湖水库'},
+        {latLng: [30.22, 120.12], name: '杭州-西湖'},
+        {latLng: [40.30, 114.56], name: '张家口-姚家庄'},
+        {latLng: [32.42, 112.02], name: '湖北-黑龙集'}	
+
+
+
+		      
+		    ]
+		});
+	</script>
+</html>
